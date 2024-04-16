@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router'
 import Header from './header/Header'
 import Player from './player/Player'
@@ -8,6 +8,19 @@ import Footer from './footer/Footer'
 function App() {
   const [ score, setScore ] = useState(0)
   const [ playerChoice, setPlayerChoice ] = useState("")
+
+  // Get score from local storage
+  useEffect(() => {
+    const scoreLS = JSON.parse(localStorage.getItem('score'))
+    if (scoreLS) {
+      setScore(scoreLS)
+    }
+  }, [])
+
+  // Set score in local storage
+  useEffect(() => {
+    localStorage.setItem('score', JSON.stringify(score))
+  }, [score])
 
   return (
     <div>
