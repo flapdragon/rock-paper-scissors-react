@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Result = ({ playerChoice, score, setScore }) => {
   const handleClick = () => {
     console.log("handleClick")
@@ -7,6 +9,9 @@ const Result = ({ playerChoice, score, setScore }) => {
     <div>
       <h1>{playerChoice}</h1>
       <button onClick={handleClick}>You Win</button>
+      <Link to="/">
+        Play Again
+      </Link>
     </div>
   )
 }
