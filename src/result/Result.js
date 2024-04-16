@@ -1,6 +1,13 @@
-const Result = () => {
+const Result = ({ playerChoice, score, setScore }) => {
+  const handleClick = () => {
+    console.log("handleClick")
+    setScore(score + 1)
+  }
   return (
-    <h1>Results</h1>
+    <div>
+      <h1>{playerChoice}</h1>
+      <button onClick={handleClick}>You Win</button>
+    </div>
   )
 }
 

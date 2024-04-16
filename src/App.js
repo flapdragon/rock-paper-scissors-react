@@ -14,11 +14,11 @@ function App() {
       <Header score={score} />
       <Routes>
         <Route path="/" element={<Player setPlayerChoice={setPlayerChoice} />}></Route>
-        <Route path="/result" element={<Result />}></Route>
+        <Route path="/result" element={<Result playerChoice={playerChoice} score={score} setScore={setScore} />}></Route>
       </Routes>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
