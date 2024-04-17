@@ -71,18 +71,11 @@ const Result = ({ playerChoice, score, setScore }) => {
     }
   }, [counter])
 
-  // TODO: remove this
-  const handleClick = () => {
-    console.log("handleClick")
-    setScore(score + 1)
-  }
-
   return (
     <div>
       <h1>{playerChoice}</h1>
       <h1>{computerChoice}</h1>
       <h1>{result}</h1>
-      <button onClick={handleClick}>You Win</button>
       <Link to="/">
         Play Again
       </Link>
