@@ -1,10 +1,20 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Result = ({ playerChoice, score, setScore }) => {
   const [ computerChoice, setComputerChoice ] = useState("")
   const [ result, setResult ] = useState("")
   const [ counter, setCounter ] = useState(1)
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // If playerChoice isn't defined or if user came to this route directly
+    if (!playerChoice) {
+      // Redirect to home
+      navigate('/')
+    }
+  }, [])
 
   const newComputerPick = () => {
     const choices = [ 'rock', 'paper', 'scissors' ]
