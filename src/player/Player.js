@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import Triangle from '../images/bg-triangle.svg'
+import './Player.css'
 
 const Player = ({ setPlayerChoice }) => {
   const handleClick = (e) => {
@@ -6,12 +8,34 @@ const Player = ({ setPlayerChoice }) => {
   }
 
   return (
-    <div>
-      <Link to="/result">
-        <button data-id="rock" onClick={handleClick}>Rock</button>
-        <button data-id="paper" onClick={handleClick}>Paper</button>
-        <button data-id="scissors" onClick={handleClick}>Scissors</button>
-      </Link>
+    <div className="player">
+      <img src={Triangle} alt="" className="triangle" />
+      <div className="items">
+        <Link to="/result">
+          <div
+            data-id="rock"
+            onClick={handleClick}
+            className="icon icon--rock"
+          >
+          </div>
+        </Link>
+        <Link to="/result">
+          <div
+            data-id="paper"
+            onClick={handleClick}
+            className="icon icon--paper"
+          >
+          </div>
+        </Link>
+        <Link to="/result">
+          <div
+            data-id="scissors"
+            onClick={handleClick}
+            className="icon icon--scissors"
+          >
+          </div>
+        </Link>
+      </div>
     </div>
   )
 }
