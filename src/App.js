@@ -4,6 +4,7 @@ import Header from './header/Header'
 import Player from './player/Player'
 import Result from './result/Result'
 import Footer from './footer/Footer'
+import './App.css'
 
 function App() {
   const [ score, setScore ] = useState(0)
@@ -23,7 +24,7 @@ function App() {
   }, [score])
 
   return (
-    <div>
+    <div className="container">
       <Header score={score} />
       <Routes>
         <Route path="/" element={<Player setPlayerChoice={setPlayerChoice} />}></Route>
