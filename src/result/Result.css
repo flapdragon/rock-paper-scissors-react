@@ -1,0 +1,120 @@
+.result {
+  display: flex;
+  margin-top: 3.125rem;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.result__player {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2.5rem;
+}
+
+.result__computer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+}
+
+.result__player .result-text, .result__computer .result-text  {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.result__player .icon, .result__computer .icon {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border-color: transparent;
+  border: 25px solid;
+  background-size: 50%;
+}
+
+.result__player .icon--rock, .result__computer .icon--rock {
+  background-color: #fff;
+  background-image: url("../images/icon-rock.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: #4a5065;
+}
+
+.result__player .icon--rock--winner {
+  border-color: #4cd038;
+  box-shadow: 0px 5px 6px #4cd038, 0px 8px #4cd038, 0px 0px 0px 50px rgba(255, 255, 255, .07), 0px 0px 0px 100px rgba(255, 255, 255, .05), 0px 0px 0px 150px rgba(255, 255, 255, .025);
+}
+
+.result__computer .icon--rock--winner {
+  border-color: #a11b34;
+  box-shadow: 0px 5px 6px #a11b34, 0px 8px #a11b34, 0px 0px 0px 50px rgba(255, 255, 255, .07), 0px 0px 0px 100px rgba(255, 255, 255, .05), 0px 0px 0px 150px rgba(255, 255, 255, .025);
+}
+
+.result__player .icon--paper, .result__computer .icon--paper {
+  background-color: #fff;
+  background-image: url("../images/icon-paper.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: #4a5065;
+  /* box-shadow: inset 0px 5px 6px grey, 0px 8px #0d31e3; */
+}
+.result__player .icon--paper--winner{
+  border-color: #4cd038;
+  box-shadow: 0px 5px 6px #4cd038, 0px 8px #4cd038, 0px 0px 0px 50px rgba(255, 255, 255, .07), 0px 0px 0px 100px rgba(255, 255, 255, .05), 0px 0px 0px 150px rgba(255, 255, 255, .025);
+}
+.result__computer .icon--paper--winner {
+  border-color: #a11b34;
+  box-shadow: 0px 5px 6px #a11b34, 0px 8px #a11b34, 0px 0px 0px 50px rgba(255, 255, 255, .07), 0px 0px 0px 100px rgba(255, 255, 255, .05), 0px 0px 0px 150px rgba(255, 255, 255, .025);
+}
+
+.result__player .icon--scissors, .result__computer .icon--scissors {
+  background-color: #fff;
+  background-image: url("../images/icon-scissors.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: #4a5065;
+  /* box-shadow: inset 0px 5px 6px grey, 0px 8px #a46e0a; */
+}
+.result__player .icon--scissors--winner {
+  border-color: #4cd038;
+  box-shadow: 0px 5px 6px #4cd038, 0px 8px #4cd038, 0px 0px 0px 50px rgba(255, 255, 255, .07), 0px 0px 0px 100px rgba(255, 255, 255, .05), 0px 0px 0px 150px rgba(255, 255, 255, .025);
+}
+.result__computer .icon--scissors--winner {
+  border-color: #a11b34;
+  box-shadow: 0px 5px 6px #a11b34, 0px 8px #a11b34, 0px 0px 0px 50px rgba(255, 255, 255, .07), 0px 0px 0px 100px rgba(255, 255, 255, .05), 0px 0px 0px 150px rgba(255, 255, 255, .025);
+}
+
+.result__computer .counter {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .3);
+  font-size: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result__game {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2rem;
+}
+.result__game .result-text {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.result__game .play-again {
+  background-color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+.result__game .play-again:hover {
+  color: red;
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import './Result.css'
 
 const Result = ({ playerChoice, score, setScore }) => {
   const [ computerChoice, setComputerChoice ] = useState("")
@@ -60,7 +61,7 @@ const Result = ({ playerChoice, score, setScore }) => {
 
   useEffect(() => {
     const timer =
-      counter <= 3
+      counter < 4
         ? setInterval(() => {
           setCounter(counter + 1)
         }, 1000)
@@ -72,13 +73,43 @@ const Result = ({ playerChoice, score, setScore }) => {
   }, [counter])
 
   return (
-    <div>
-      <h1>{playerChoice}</h1>
-      <h1>{computerChoice}</h1>
-      <h1>{result}</h1>
-      <Link to="/">
-        Play Again
-      </Link>
+    <div className="result">
+      <div className="result__player">
+        <span className="result-text">You picked:</span>
+        <div className={`icon icon--${playerChoice} ${result === "win" && counter == 4 ? `icon--${playerChoice}--winner` : ""}`}></div>
+      </div>
+      {result === "win" && (
+        <div className="result__game">
+          <span className="result-text">You win</span>
+          <Link to="/" onClick={() => {setComputerChoice("")}} className="play-again">
+            Play Again
+          </Link>
+        </div>
+      )}
+      {result === "lose" && (
+        <div className="result__game">
+          <span className="result-text">You lose</span>
+          <Link to="/" onClick={() => {setComputerChoice("")}} className="play-again">
+            Play Again
+          </Link>
+        </div>
+      )}
+      {result === "draw" && (
+        <div className="result__game">
+          <span className="result-text">Draw</span>
+          <Link to="/" onClick={() => {setComputerChoice("")}} className="play-again">
+            Play Again
+          </Link>
+        </div>
+      )}
+      <div className="result__computer">
+        <span className="result-text">The computer picked:</span>
+        {counter === 4 ? (
+          <div className={`icon icon--${computerChoice} ${result === "lose" ? `icon--${computerChoice}--winner` : ""}`}></div>
+        ) : (
+          <div className="counter">{counter}</div>
+        )}
+      </div>
     </div>
   )
 }
