@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandFist, faHand, faHandScissors } from '@fortawesome/free-solid-svg-icons'
 import './Result.css'
 
 const Result = ({ playerChoice, score, setScore }) => {
@@ -76,7 +78,17 @@ const Result = ({ playerChoice, score, setScore }) => {
     <div className="result">
       <div className="result__player">
         <span className="result-text">You picked:</span>
-        <div className={`icon icon--${playerChoice} ${result === "win" && counter == 4 ? `icon--${playerChoice}--winner` : ""}`}></div>
+        <div className={`icon icon--${playerChoice} ${result === "win" && counter == 4 ? `icon--${playerChoice}--winner` : ""}`}>
+          {playerChoice === "rock" && (
+            <FontAwesomeIcon icon={faHandFist} size="6x" />
+          )}
+          {playerChoice === "paper" && (
+            <FontAwesomeIcon icon={faHand} size="6x" />
+          )}
+          {playerChoice === "scissors" && (
+            <FontAwesomeIcon icon={faHandScissors} size="6x" />
+          )}
+        </div>
       </div>
       {result === "win" && (
         <div className="result__game">
@@ -105,7 +117,17 @@ const Result = ({ playerChoice, score, setScore }) => {
       <div className="result__computer">
         <span className="result-text">The computer picked:</span>
         {counter === 4 ? (
-          <div className={`icon icon--${computerChoice} ${result === "lose" ? `icon--${computerChoice}--winner` : ""}`}></div>
+          <div className={`icon icon--${computerChoice} ${result === "lose" ? `icon--${computerChoice}--winner` : ""}`}>
+            {computerChoice === "rock" && (
+              <FontAwesomeIcon icon={faHandFist} size="6x" />
+            )}
+            {computerChoice === "paper" && (
+              <FontAwesomeIcon icon={faHand} size="6x" />
+            )}
+            {computerChoice === "scissors" && (
+              <FontAwesomeIcon icon={faHandScissors} size="6x" />
+            )}
+          </div>
         ) : (
           <div className="counter">{counter}</div>
         )}

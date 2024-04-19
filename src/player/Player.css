@@ -32,9 +32,9 @@
   box-shadow: solid 0px 5px 6px grey, 0px 8px #0d31e3;
   transform: translateX(1.5rem);
   transition: transform 0.2s;
-  background-image: url("../images/icon-rock.svg");
+  /* background-image: url("../images/icon-rock.svg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .player .items .icon--rock:hover {
@@ -49,9 +49,9 @@
   box-shadow: solid 0px 5px 6px grey, 0px 8px #0d31e3;
   transform: translateX(8rem);
   transition: transform 0.2s;
-  background-image: url("../images/icon-paper.svg");
+  /* background-image: url("../images/icon-paper.svg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .player .items .icon--paper:hover {
@@ -66,9 +66,9 @@
   box-shadow: solid 0px 5px 6px grey, 0px 8px #0d31e3;
   transform: translateX(-10rem) translateY(13rem);
   transition: transform 0.2s;
-  background-image: url("../images/icon-scissors.svg");
+  /* background-image: url("../images/icon-scissors.svg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .player .items .icon--scissors:hover {
