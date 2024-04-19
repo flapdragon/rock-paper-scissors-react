@@ -21,6 +21,9 @@ Start the server locally
 npm start
 ```
 
+## Deployment
+Deployed with Vercel at <https://rock-paper-scissors-react-orcin.vercel.app/>
+
 ## Credits
 
 Based on the project from that guy.
